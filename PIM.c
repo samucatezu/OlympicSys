@@ -83,6 +83,7 @@ void menuPrincipal()
         printf("\t\t\t|\t 2 - Medico           |\n");
         printf("\t\t\t|\t 3 - Funcionario      |\n");
         printf("\t\t\t|\t 4 - Voluntario       |\n");
+        printf("\t\t\t|\t 5 - Rank de medalhas |\n");
         printf("\t\t\t|\t 0 - Sair             |\n");
         printf ("\t\t\t|\t                      |\n");
         printf ("\t\t\t===============================\n");
@@ -105,6 +106,10 @@ void menuPrincipal()
         case 4:
             menuUsers();
             break;
+        case 5:
+            menuMedalhas();
+            break;
+
         case 0:
             exit(EXIT_SUCCESS);
         default:
@@ -116,7 +121,30 @@ void menuPrincipal()
     system("cls");
 }
 
-void menuUsers()
+void menuMedalhas()
+{
+    do
+    {
+        printf("\n");
+        printf ("\t\t\t\tRanking de medalhas\n");
+        printf ("\t\t\t__________________________________________________\n");
+        printf ("\t\t\t|\t                                         |\n");
+        printf("\t\t\t|\t        | China | EUA  | Brasil | Japao  |\n");
+        printf("\t\t\t|\t Ouro   |   6   |   8  |   20   |    9   |\n");
+        printf("\t\t\t|\t Prata  |   17  |   12 |   25   |    11  |\n");
+        printf("\t\t\t|\t Bronze |   27  |   22 |   35   |    20  |\n");
+        printf("\t\t\t|________________________________________________|\n");
+        printf ("\n\n");
+        fflush(stdin);
+        scanf("%d", &input);
+        system("cls");
+
+}
+        while(input != 0);
+}
+
+
+ void menuUsers()
 {
     do
     {
@@ -240,7 +268,7 @@ Pessoa receberUser()
     printf ("Crie uma Senha: ");
     receberString(p.segredo, 13);
     fflush(stdin);
-    
+
     p.end = receberEndereco();
 
     sucesso();
@@ -277,7 +305,7 @@ void inserirUser(Pessoa p)
     }
     users[qtdUsers] = p;
     qtdUsers++;
-}    
+}
 
 void alterarNome()
 {
